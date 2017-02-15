@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的错题本</title>
+	<style>
+		div,ul,li,h1,h2,h3,h4,h5,h6{
+			padding:0;
+			margin:0;
+			list-style:none;
+		}
+		.big-box{
+			margin-top:20px;
+			background:#ccc;
+			width:100%;
+		}
+		.box-list{
+           width:1200px;
+           margin:auto;
+           background:#c5d6d0;
+		}
+		.box-list li{
+			margin-bottom:5px;
+			padding:10px;
+			background:#fec;
+		}
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<mark>2017年2月15日</mark>
+		<ul class="box-list">
+			<li>
+				<h1>js文件引入位置</h1>
+				<p>引用js文件切记把插件引到自己写的js前面，否则会报错。</p>
+			</li>
+			<li>
+				<h1>clearfix的使用（父元素不设置高）</h1>
+				<p>当A包B、C两个盒子，B和C都有浮动，A的高度就变成0，这时给A加clearfix，A就有高度了。
+				</br>
+				第一种
+				/* .clearfix:before, .clearfix:after {
+				    content: '\20';
+				    display: table;
+				    height: 0;
+				    overflow: hidden; 
+				}
+				.clearfix:after {
+				    clear: both; 
+				} */
+               </br>
+                第二种
+				/* .clearfix:before,.clearfix:after{ 
+				    content:""; 
+				    display:table; 
+				} 
+				.clearfix:after{clear:both;} 
+				.clearfix{ 
+				    *zoom:1;IE/7/6
+				} */
+                </br>
+                第三种 
+				.clearfix:after { 
+				    content:"\200B"; 
+				    display:block; 
+				    height:0; 
+				    clear:both; 
+				} 
+				.clearfix {*zoom:1;}/*IE/7/6*/
+				</p>
+			</li>
+			<li>
+				<h1>js获取变量本身就是字符串，切记把''去掉</h1>
+				<p>var aboutId=$(this).attr('data-for');</br>
+                   $('#'+aboutId).removeClass('about-r');
+				</p>
+			</li>
+			<li>
+				<h1>a标签加tab切换的时候切记把href="javascript:;"</h1>
+			</li>
+		</ul>
+
+	</div>
+</body>
+</html>
